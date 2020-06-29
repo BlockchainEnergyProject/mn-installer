@@ -3,7 +3,7 @@
 This guide is for a single masternode, on a Ubuntu 18.04 64bit server(1GB RAM) and will be controlled from the wallet on your local computer.
 
 First the basic requirements:
-* 1000 BCE (https://www.exchange.bcecoin.com)
+* 1000 BCE (https://exchange.tlsgroup.io)
 * A main computer(Your everyday computer)
 * Masternode Server(The computer that will be on 24/7)
 * A unique IP address for EACH masternode
