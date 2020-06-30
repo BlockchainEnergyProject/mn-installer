@@ -55,7 +55,6 @@ function download_binary(){
 		chmod +x $COIN_DAEMON $COIN_CLI
 		mv $COIN_DAEMON $COIN_CLI $COIN_PATH/
 	fi
-    rm -Rf "${HOME}/${COIN_NAME}"
 }
 
 function install_packages() {
