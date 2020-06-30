@@ -106,6 +106,7 @@ if [[ ! -f "${CONFIG_FOLDER}/${CONFIG_FILE}" ]]; then
 	if [ -z "$(ps axo cmd:100 | grep ${COIN_DAEMON})" ]; then
 	   echo -e "${RED}${COIN_NAME} server couldn not start. Check /var/log/syslog for errors.{$NC}"
 	   exit 1
+else
 	
     echo -e "* Config file ${CONFIG_FILE} already exists!"
     . "${CONFIG_FOLDER}/${CONFIG_FILE}"
