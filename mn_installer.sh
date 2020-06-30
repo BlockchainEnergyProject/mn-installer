@@ -112,9 +112,9 @@ if [[ ! -f "${CONFIG_FOLDER}/${CONFIG_FILE}" ]]; then
 		sleep 30
 		MNPRIVKEY=$(${COIN_CLI} masternode genkey)
 	fi
-    ${COIN_CLI} stop	
+        ${COIN_CLI} stop	
 	printf "%s\n" "" "externalip=${MAIN_IP}" "masternodeaddr=${MAIN_IP}:${COIN_PORT}" "masternode=1" "masternodeprivkey=${MNPRIVKEY}" >> ${CONFIG_FOLDER}/${CONFIG_FILE}
-else
+    else
     echo -e "* Config file ${CONFIG_FILE} already exists!"
     . "${CONFIG_FOLDER}/${CONFIG_FILE}"
 	MNPRIVKEY=${masternodeprivkey}
