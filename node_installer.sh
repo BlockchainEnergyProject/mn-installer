@@ -106,9 +106,12 @@ if [[ ! -f "${CONFIG_FOLDER}/${CONFIG_FILE}" ]]; then
 	if [ -z "$(ps axo cmd:100 | grep ${COIN_DAEMON})" ]; then
 	   echo -e "${RED}${COIN_NAME} server couldn not start. Check /var/log/syslog for errors.{$NC}"
 	   exit 1
+	fi
+    ${COIN_CLI} stop	
 else
     echo -e "* Config file ${CONFIG_FILE} already exists!"
     . "${CONFIG_FOLDER}/${CONFIG_FILE}"
+	MNPRIVKEY=${masternodeprivkey}
 fi
 }
 
@@ -147,13 +150,15 @@ sleep 3
 function display_information() {
  echo
  echo -e "================================================================================================================================"
- echo -e "${COIN_NAME} Node is up and running listening on port ${GREEN}${COIN_PORT}${NC}."
+ echo -e "${COIN_NAME} Masternode is up and running listening on port ${GREEN}${COIN_PORT}${NC}."
  echo -e "Configuration folder is: ${RED}$CONFIG_FOLDER${NC}"
  echo -e "Configuration file is: ${RED}$CONFIG_FOLDER/$CONFIG_FILE${NC}"
+ echo -e "Configuration masternode file is: ${RED}$CONFIG_FOLDER/masternode.conf${NC}"
  echo -e "Node start: ${RED}systemctl start ${COIN_DAEMON}.service${NC}"
  echo -e "Node restart: ${RED}systemctl restart ${COIN_DAEMON}.service${NC}"
  echo -e "Node stop: ${RED}systemctl stop ${COIN_DAEMON}.service${NC}"
  echo -e "VPS_IP:PORT ${RED}${MAIN_IP}:${COIN_PORT}${NC}"
+ echo -e "MASTERNODE PRIVATEKEY is: ${RED}${MNPRIVKEY}${NC}"
  echo -e "Please check ${GREEN}$COIN_NAME${NC} is running with the following command: ${GREEN}systemctl status ${COIN_DAEMON}.service${NC}"
  echo -e "================================================================================================================================"
 }
