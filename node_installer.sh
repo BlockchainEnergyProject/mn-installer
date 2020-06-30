@@ -109,7 +109,6 @@ if [[ ! -f "${CONFIG_FOLDER}/${CONFIG_FILE}" ]]; then
 	
     echo -e "* Config file ${CONFIG_FILE} already exists!"
     . "${CONFIG_FOLDER}/${CONFIG_FILE}"
-fi
 }
 
 function create_systemd_service() {
