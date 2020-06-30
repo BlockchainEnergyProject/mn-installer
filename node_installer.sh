@@ -3,7 +3,7 @@
 declare -r COIN_NAME='blockchainenergy'
 declare -r COIN_DAEMON="${COIN_NAME}d"
 declare -r COIN_CLI="${COIN_NAME}-cli"
-declare -r COIN_PATH='/usr/bin'
+declare -r COIN_PATH='/usr/local/bin'
 declare -r COIN_ARH='https://github.com/blockchainenergy-project/blockchainenergy/releases/latest/download/daemon18.04.tar.gz'
 declare -r COIN_TGZ=$(echo ${COIN_ARH} | awk -F'/' '{print $NF}')
 declare -r COIN_PORT=18050
@@ -106,8 +106,10 @@ if [[ ! -f "${CONFIG_FOLDER}/${CONFIG_FILE}" ]]; then
 	if [ -z "$(ps axo cmd:100 | grep ${COIN_DAEMON})" ]; then
 	   echo -e "${RED}${COIN_NAME} server couldn not start. Check /var/log/syslog for errors.{$NC}"
 	   exit 1
-else
 	
+	fi
+    ${COIN_CLI} stop	
+else
     echo -e "* Config file ${CONFIG_FILE} already exists!"
     . "${CONFIG_FOLDER}/${CONFIG_FILE}"
 fi
