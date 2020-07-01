@@ -43,7 +43,7 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
     Please do NOT send this amount to exchanges or to any other address!!!***
     
 7. Still in the main wallet, enter the command into the console:
-   ```masternode outputs``` (This gets the proof of transaction of sending 1000)
+   ```getmasternodeoutputs``` (This gets the proof of transaction of sending 1000)
 8. Still on the main computer, go into the BlockchainEnergy data directory(D:\BlockchainEnergy\data)
    Find masternode.conf and add the following line to it:   
    
