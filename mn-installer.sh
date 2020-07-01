@@ -4,15 +4,14 @@ declare -r COIN_NAME='blockchainenergy'
 declare -r COIN_DAEMON="${COIN_NAME}d"
 declare -r COIN_CLI="${COIN_NAME}-cli"
 declare -r COIN_TX="${COIN_NAME}-tx"
-declare -r COIN_PATH='/usr/bin'
+declare -r COIN_PATH='/usr/bin/'
 declare -r COIN_ARH='https://github.com/blockchainenergy-project/blockchainenergy-core/releases/download/V1.0.0.0/daemon18.04.tar.gz'
-declare -r COIN_TGZ=$(echo ${COIN_ARH} | awk -F'/' '{print $NF}')
+declare -r COIN_TGZ=daemon18.04.tar.gz
 declare -r COIN_PORT=18050
 declare -r COIN_RPC_PORT=18049
 declare -r CONFIG_FILE="${COIN_NAME}.conf"
 declare -r CONFIG_FOLDER="${HOME}/.${COIN_NAME}"
 declare -r SERVICE_FILE="/etc/systemd/system/${COIN_DAEMON}.service"
-declare -r TMP_FOLDER="${HOME}/${COIN_NAME}/tmp"
 declare -r RED='\033[0;31m'
 declare -r GREEN='\033[0;32m'
 declare -r NC='\033[0m'
@@ -40,23 +39,15 @@ MAIN_IP=$(wget -qO- https://api.ipify.org)
 
 function create_mn_dirs() {
     echo -e "* Creating masternode directories"
-    mkdir -p ${CONFIG_FOLDER}   
-    mkdir -p ${TMP_FOLDER}      	
+    mkdir -p ${CONFIG_FOLDER}    	
 }
 
 function download_binary(){
     echo -e "* Download binary files"
-	cd 	${TMP_FOLDER}
-	rm -f ${COIN_TGZ}
-	if [[ ! -f "${TMP_FOLDER}/${COIN_TGZ}" ]]; then
-		wget ${COIN_ARH}
-	fi
-	if [[ -f "${TMP_FOLDER}/${COIN_TGZ}" ]]; then
-		tar -xvzf "${TMP_FOLDER}/${COIN_TGZ}" --strip-components=1 -C ${TMP_FOLDER}
-		chmod +x $COIN_DAEMON $COIN_CLI $COIN_TX
-		mv $COIN_DAEMON $COIN_CLI $COIN_TX $COIN_PATH/
-	fi
-    rm -Rf "${HOME}/${COIN_NAME}"
+	wget ${COIN_ARH}
+	tar -xvzf "${COIN_TGZ}" 
+	mv $COIN_DAEMON $COIN_CLI $COIN_TX $COIN_PATH
+fi
 }
 
 function install_packages() {
