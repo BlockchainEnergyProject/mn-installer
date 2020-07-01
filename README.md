@@ -55,7 +55,7 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
    
    ```mn1 10.10.10.10:47002 5j31NEU4Mw629r9SQLiqctuAody3BL8E9tW3aQD7wR2bA2AzQhh e629899c90494cf2a0b8935bece819480db0749b59e0d65ffb55c9bffaed5f99 1```
    
-9. Still on the main computer. in same folder , open the safecapital.conf file. Make it look like this:
+9. Still on the main computer. in same folder , open the blockchainenergy.conf file. Make it look like this:
 
    ```
    rpcuser=RandomUsernameOnlyAlphabeticWithoutSymbolsAndSpaces
