@@ -3,7 +3,7 @@
 # BCE Masternode Install Script to be run on Ubuntu and similar linux
 
 # Project Name
-PROJECT="blockchainenergy"
+PROJECT=blockchainenergy
 PORT=18049
 
 # Project Name uppercase
