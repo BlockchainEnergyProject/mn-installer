@@ -42,12 +42,11 @@ function create_mn_dirs() {
     mkdir -p ${CONFIG_FOLDER}    	
 }
 
-function download_binary(){
+function download_binary() {
     echo -e "* Download binary files"
 	wget ${COIN_ARH}
 	tar -xvzf "${COIN_TGZ}" 
 	mv $COIN_DAEMON $COIN_CLI $COIN_TX $COIN_PATH
-fi
 }
 
 function install_packages() {
