@@ -103,7 +103,7 @@ if [[ ! -f "${CONFIG_FOLDER}/${CONFIG_FILE}" ]]; then
 		then
 		echo -e "${RED}Wallet not fully loaded. Let us wait and try again to generate the Private Key${NC}"
 		sleep 30
-		MNPRIVKEY=$(${COIN_CLI} masternode genkey)
+		MNPRIVKEY=$(${COIN_CLI} createmasternodekey)
 	fi
     ${COIN_CLI} stop	
 	printf "%s\n" "" "externalip=${MAIN_IP}" "masternodeaddr=${MAIN_IP}:${COIN_PORT}" "masternode=1" "masternodeprivkey=${MNPRIVKEY}" >> ${CONFIG_FOLDER}/${CONFIG_FILE}
