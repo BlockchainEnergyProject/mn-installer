@@ -22,7 +22,7 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
     * Always use right button click for PASTE text in PUTTY from WINDOWS
 3. RUN script bellow(select from below, COPY, PASTE in Putty and press ENTER):
 
-   ```curl https://raw.githubusercontent.com/blockchainenergy-project/mn-installer/master/mn_installer.sh | bash```
+   ```curl https://raw.githubusercontent.com/blockchainenergy-project/mn-installer/master/mn-installer.sh | bash```
     
    (It may take 2-3 minutes. It will automatically install and configure masternode wallet for your masternode server!)
 4. **Note VPS_IP:PORT and Masternode Privatekey**(this will be the masternode’s privkey) in Notepad(text file)! - We’ll use this later…
