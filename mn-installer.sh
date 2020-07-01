@@ -44,9 +44,9 @@ function create_mn_dirs() {
 
 function download_binary() {
     echo -e "* Download binary files"
-	wget ${COIN_ARH}
-	tar -xvzf "${COIN_TGZ}" 
-	mv $COIN_DAEMON $COIN_CLI $COIN_TX $COIN_PATH
+    wget ${COIN_ARH}
+    tar -xvzf "${COIN_TGZ}" 
+    mv $COIN_DAEMON $COIN_CLI $COIN_TX $COIN_PATH
 }
 
 function install_packages() {
