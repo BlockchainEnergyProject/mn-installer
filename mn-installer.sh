@@ -39,7 +39,7 @@ MAIN_IP=$(wget -qO- https://api.ipify.org)
 
 function create_mn_dirs() {
     echo -e "* Creating masternode directories"
-    mkdir -p ${CONFIG_FOLDER}    	
+    mkdir ${CONFIG_FOLDER}    	
 }
 
 function download_binary() {
