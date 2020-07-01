@@ -7,7 +7,7 @@ PROJECT=blockchainenergy
 PORT=18049
 
 # Project Name uppercase
-PROJ_U=${PROJECT^^}
+PROJ_U=${PROJECT}
 
 GITHUB_REPO="blockchainenergy-project/"${PROJ_U}"-core"
 GITHUB_URL="https://github.com/"$GITHUB_REPO
