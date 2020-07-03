@@ -68,6 +68,7 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
    ***Make sure to replace rpcuser and rpcpassword with your own.***
    
 10. Save it, close and restart the main wallet. **Wait for full sync**.
-11. Masternodes tab -> Start all
+11. TOOLS -> DEBUG CONSOLE and type the following command:
+   ```startmasternode alias false mn1```
    
 #### *Congratulations! You have successfully created your masternode!*
