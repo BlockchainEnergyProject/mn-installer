@@ -17,6 +17,7 @@ For this guide, I’m going to refer to your main computer’s wallet as the mai
 ### I. Deploy VPS and configuration
 
 1. Get a VPS server with min. 1GB RAM and Ubuntu 18.04 as operating system
+   https://www.vultr.com/?ref=8604557-6G
 2. Get PUTTY for your operating system from https://www.putty.org
     * Always use mouse selection for COPY text from PUTTY to WINDOWS
     * Always use right button click for PASTE text in PUTTY from WINDOWS
